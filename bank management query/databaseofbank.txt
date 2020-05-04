@@ -1,0 +1,66 @@
+CreateAccount:-
+create table CREATEACCOUNT(
+name varchar(20) Not Null,
+branch varchar(15) Not Null,
+Type varchar(10) Not Null,
+date date Not Null,
+email_id varchar(40) Not Null,
+phone varchar(10) Not Null,
+balance decimal Not Null,
+address varchar(50) Not Null,
+gender varchar(10) Not Null,
+acc_no int ,
+p_photo blob Not Null,
+s_photo blob Not Null
+);
+Transection Table:-
+create table TRANSECTION(
+Tostates varchar(15) Not Null,
+Statesfrom varchar(15) Not Null,
+Amount decimal Not Null,
+To_Account int Not Null,
+From_Account int Not Null,
+Date date Not Null,
+Time time Not Null
+);
+Transection History:-
+create table TRANSECTIONHISTORY(
+Acc_No int Not Null,
+Amount decimal Not Null,
+Date date Not Null,
+Time time Not Null,
+States varchar(15) Not Null
+);
+Insert data Create Table:-
+insert into CREATEACCOUNT values('ashish','varanasi','saving','2000-12-12','abc@gmail.com','1234567891',2000,'varanasi','male',100501,Profile photo(bineryformat),Signature photo(bineryformat));
+ 
+Fatch data from CreateAccount:-
+select *from CREATEACCOUNT;
+
+Update data in CreateAccount:-
+update CREATEACCOUNT
+set NAME='abc'
+set BRANCH=' allhabad'
+set TYPE='Saving'
+set DATE='2019-12-1'
+set EMAIL_ID =' abc@gmail.com'
+set PHONE='1234567890'
+set BALANCE=1000.00
+set ADDRESS='varanasi shivpur'
+set GENDER='male'
+set P_PHOTO='blob file(binery formate)'
+
+Insert data in Transection :-
+insert into TRANSECTION values('send','recive',1000,100501,100502,'2019-12-12','11:02:00');
+
+Fatch data from CreateAccount:-
+select * from TRANSECTION;
+
+Insert data from TransectionHistory:-
+insert into TRANSECTION values(100501,5000.00,'2019-12-1','12:44:00','deposite');
+
+Fatch data from TransectionHistory :-
+select * from TransectionHistory;
+
+
+
